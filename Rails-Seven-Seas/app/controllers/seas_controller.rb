@@ -36,7 +36,9 @@ class SeasController < ApplicationController
   end
 
   def update
-    Sea.find(params[:id]).update(params[:sea])
+    @sea = Sea.find(params[:id])
+    @sea.update(sea_params)
+    redirect_to @sea
   end
 
 
